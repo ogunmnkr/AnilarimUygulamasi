@@ -9,7 +9,8 @@ import UIKit
 import Firebase
 
 class ViewController: UIViewController {
-
+// butonlar eklendi
+    
     
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var sifreText: UITextField!
