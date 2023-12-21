@@ -163,6 +163,11 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="AnaSayfa" image="homekit" catalog="system" id="PVT-Z9-zZF"/>
+                    <connections>
+                        <outlet property="imageAniEkle" destination="0WT-PM-xUt" id="QmL-3k-oed"/>
+                        <outlet property="imageAnilarim" destination="EKT-DV-cKL" id="NaV-Pr-bW0"/>
+                        <outlet property="imageHarita" destination="Mkf-AP-LDn" id="JwW-k4-SQu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="shJ-DL-qE8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
