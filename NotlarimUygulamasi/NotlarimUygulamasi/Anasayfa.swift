@@ -9,7 +9,7 @@ import UIKit
 
 class Anasayfa: UIViewController {
 
-    
+    //Github deneme 
     @IBOutlet weak var imageAniEkle: UIImageView!
     
     @IBOutlet weak var imageAnilarim: UIImageView!
