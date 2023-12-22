@@ -9,7 +9,6 @@ import UIKit
 
 class Anasayfa: UIViewController {
 
-    //Github deneme 
     @IBOutlet weak var imageAniEkle: UIImageView!
     
     @IBOutlet weak var imageAnilarim: UIImageView!
@@ -18,11 +17,20 @@ class Anasayfa: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+// harita resminin tıklanabilir olması için gereken işlemler ;
+        // imageHarita , haritaGecis fonksiyonları eklendi.
+        
+        imageHarita.isUserInteractionEnabled = true
+        let haritaTiklama = UITapGestureRecognizer(target: self, action: #selector(haritaGecis))
+        imageHarita.addGestureRecognizer(haritaTiklama)
     }
     
-
+    @objc func haritaGecis() {
+        
+        performSegue(withIdentifier: "haritamGecis", sender: nil)
+    
+    }
    
 
 }

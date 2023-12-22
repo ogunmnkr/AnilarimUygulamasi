@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -167,11 +168,45 @@
                         <outlet property="imageAniEkle" destination="0WT-PM-xUt" id="QmL-3k-oed"/>
                         <outlet property="imageAnilarim" destination="EKT-DV-cKL" id="NaV-Pr-bW0"/>
                         <outlet property="imageHarita" destination="Mkf-AP-LDn" id="JwW-k4-SQu"/>
+                        <segue destination="cYJ-dP-qvE" kind="show" identifier="haritamGecis" id="Ybe-a9-aRR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="shJ-DL-qE8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1003.8167938931298" y="-461.26760563380282"/>
+        </scene>
+        <!--Haritam-->
+        <scene sceneID="bPo-gu-IEC">
+            <objects>
+                <viewController id="cYJ-dP-qvE" customClass="Haritam" customModule="NotlarimUygulamasi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dAC-2O-jZj">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FjR-BT-3Af">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Fr9-gv-WkP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Fr9-gv-WkP" firstAttribute="trailing" secondItem="FjR-BT-3Af" secondAttribute="trailing" id="DY4-vF-1ay"/>
+                            <constraint firstItem="FjR-BT-3Af" firstAttribute="leading" secondItem="Fr9-gv-WkP" secondAttribute="leading" id="IcT-Lt-r8u"/>
+                            <constraint firstItem="Fr9-gv-WkP" firstAttribute="trailing" secondItem="FjR-BT-3Af" secondAttribute="trailing" id="ONO-o9-C38"/>
+                            <constraint firstItem="FjR-BT-3Af" firstAttribute="top" secondItem="Fr9-gv-WkP" secondAttribute="top" id="hz2-P0-Gly"/>
+                            <constraint firstItem="FjR-BT-3Af" firstAttribute="top" secondItem="Fr9-gv-WkP" secondAttribute="top" id="rgd-Sv-vpx"/>
+                            <constraint firstItem="Fr9-gv-WkP" firstAttribute="bottom" secondItem="FjR-BT-3Af" secondAttribute="bottom" id="ue3-4X-Xip"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="FFg-Xt-Ym9"/>
+                    <connections>
+                        <outlet property="mapKit" destination="FjR-BT-3Af" id="L6k-EY-Rud"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cTu-Qc-vii" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2055.7251908396947" y="35.91549295774648"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="VBj-3P-tcV">
@@ -205,7 +240,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tertiarySystemGroupedBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
