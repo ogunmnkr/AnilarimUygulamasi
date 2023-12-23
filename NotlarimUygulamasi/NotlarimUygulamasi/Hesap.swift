@@ -16,7 +16,7 @@ class Hesap: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    //Hesaptan çıkış yapmak için çıkış butonu
     @IBAction func buttonCikis(_ sender: Any) {
         
         do {

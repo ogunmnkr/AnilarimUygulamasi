@@ -168,14 +168,147 @@
                         <outlet property="imageAniEkle" destination="0WT-PM-xUt" id="QmL-3k-oed"/>
                         <outlet property="imageAnilarim" destination="EKT-DV-cKL" id="NaV-Pr-bW0"/>
                         <outlet property="imageHarita" destination="Mkf-AP-LDn" id="JwW-k4-SQu"/>
-                        <segue destination="cYJ-dP-qvE" kind="show" identifier="haritamGecis" id="Ybe-a9-aRR"/>
+                        <segue destination="l4b-MP-aeq" kind="show" identifier="haritamGecis" id="Ybe-a9-aRR"/>
+                        <segue destination="a0G-25-zwo" kind="presentation" identifier="toAniEkleVC" modalPresentationStyle="fullScreen" id="eYD-Tg-kuW"/>
+                        <segue destination="3Wn-cR-jQA" kind="show" identifier="toAnilarimVC" id="mZT-aZ-EVx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="shJ-DL-qE8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1003.8167938931298" y="-461.26760563380282"/>
         </scene>
-        <!--Haritam-->
+        <!--Ani Ekle-->
+        <scene sceneID="qEj-2i-hqt">
+            <objects>
+                <viewController id="Frn-2I-grC" customClass="AniEkle" customModule="NotlarimUygulamasi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pIZ-T9-rf2">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fotosec" translatesAutoresizingMaskIntoConstraints="NO" id="aTj-HO-Mhe">
+                                <rect key="frame" x="76" y="116" width="265" height="178"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="178" id="AR5-W9-e4a"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ANI BAŞLIK" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v3K-D1-Tv8">
+                                <rect key="frame" x="76" y="317" width="265" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TARİH VE SAAT" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gyF-iQ-Wgs">
+                                <rect key="frame" x="76" y="379" width="265" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RK1-fb-gHg">
+                                <rect key="frame" x="76" y="450" width="265" height="97"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="97" id="7Z6-2C-Ac1"/>
+                                </constraints>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NAd-Qj-ONu">
+                                <rect key="frame" x="76" y="578" width="265" height="177"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="plI-4B-Gf0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gyF-iQ-Wgs" firstAttribute="leading" secondItem="RK1-fb-gHg" secondAttribute="leading" id="6Ox-fO-pRV"/>
+                            <constraint firstItem="aTj-HO-Mhe" firstAttribute="leading" secondItem="plI-4B-Gf0" secondAttribute="leading" constant="76" id="7Lm-v3-bM6"/>
+                            <constraint firstItem="RK1-fb-gHg" firstAttribute="leading" secondItem="NAd-Qj-ONu" secondAttribute="leading" id="7hY-Yg-N1t"/>
+                            <constraint firstItem="RK1-fb-gHg" firstAttribute="top" secondItem="gyF-iQ-Wgs" secondAttribute="bottom" constant="37" id="Jsf-O7-O5F"/>
+                            <constraint firstItem="NAd-Qj-ONu" firstAttribute="top" secondItem="RK1-fb-gHg" secondAttribute="bottom" constant="31" id="SqY-gv-6rT"/>
+                            <constraint firstItem="gyF-iQ-Wgs" firstAttribute="trailing" secondItem="RK1-fb-gHg" secondAttribute="trailing" id="TWt-cJ-yZN"/>
+                            <constraint firstItem="v3K-D1-Tv8" firstAttribute="top" secondItem="aTj-HO-Mhe" secondAttribute="bottom" constant="23" id="Tfp-M5-utA"/>
+                            <constraint firstItem="aTj-HO-Mhe" firstAttribute="leading" secondItem="v3K-D1-Tv8" secondAttribute="leading" id="VNP-eh-e7d"/>
+                            <constraint firstItem="aTj-HO-Mhe" firstAttribute="top" secondItem="plI-4B-Gf0" secondAttribute="top" constant="72" id="aXJ-Si-jDY"/>
+                            <constraint firstItem="plI-4B-Gf0" firstAttribute="trailing" secondItem="aTj-HO-Mhe" secondAttribute="trailing" constant="52" id="c35-Dm-GLe"/>
+                            <constraint firstItem="RK1-fb-gHg" firstAttribute="trailing" secondItem="NAd-Qj-ONu" secondAttribute="trailing" id="dfM-WJ-g29"/>
+                            <constraint firstItem="v3K-D1-Tv8" firstAttribute="trailing" secondItem="gyF-iQ-Wgs" secondAttribute="trailing" id="egL-Je-1cG"/>
+                            <constraint firstItem="v3K-D1-Tv8" firstAttribute="leading" secondItem="gyF-iQ-Wgs" secondAttribute="leading" id="gY8-ce-UVc"/>
+                            <constraint firstItem="plI-4B-Gf0" firstAttribute="bottom" secondItem="NAd-Qj-ONu" secondAttribute="bottom" constant="97" id="oLg-PY-vWO"/>
+                            <constraint firstItem="aTj-HO-Mhe" firstAttribute="trailing" secondItem="v3K-D1-Tv8" secondAttribute="trailing" id="v5Y-gw-Nww"/>
+                            <constraint firstItem="gyF-iQ-Wgs" firstAttribute="top" secondItem="v3K-D1-Tv8" secondAttribute="bottom" constant="28" id="xup-qG-Evj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Xmy-48-bAD"/>
+                    <connections>
+                        <outlet property="aniBaslikText" destination="v3K-D1-Tv8" id="SUO-FV-ZgE"/>
+                        <outlet property="imageViewFotoSec" destination="aTj-HO-Mhe" id="MOg-j6-QBJ"/>
+                        <outlet property="mapKitView" destination="RK1-fb-gHg" id="UJy-S9-VnO"/>
+                        <outlet property="notTextView" destination="NAd-Qj-ONu" id="3PA-Ag-WSa"/>
+                        <outlet property="tarihSaatText" destination="gyF-iQ-Wgs" id="RKk-xE-dDC"/>
+                        <segue destination="uUW-Qg-8eq" kind="presentation" identifier="toMapKitVC" modalPresentationStyle="fullScreen" id="GeW-TW-HNW"/>
+                        <segue destination="3Wn-cR-jQA" kind="presentation" identifier="toAnilarimVC1" modalPresentationStyle="fullScreen" id="7O4-BG-cEI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k1C-mp-xjO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2962.5954198473282" y="-461.26760563380282"/>
+        </scene>
+        <!--Map KitVC-->
+        <scene sceneID="yBd-af-ipC">
+            <objects>
+                <viewController id="1OA-OE-RtC" customClass="MapKitVC" customModule="NotlarimUygulamasi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6eJ-LG-deh">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0P-I4-Mkc">
+                                <rect key="frame" x="0.0" y="44" width="393" height="808"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NYx-cZ-4cz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="C0P-I4-Mkc" firstAttribute="top" secondItem="NYx-cZ-4cz" secondAttribute="top" id="BtD-tT-NYh"/>
+                            <constraint firstItem="NYx-cZ-4cz" firstAttribute="bottom" secondItem="C0P-I4-Mkc" secondAttribute="bottom" id="Duk-FU-Ihq"/>
+                            <constraint firstItem="C0P-I4-Mkc" firstAttribute="leading" secondItem="NYx-cZ-4cz" secondAttribute="leading" id="f0Z-n0-Vp2"/>
+                            <constraint firstItem="NYx-cZ-4cz" firstAttribute="trailing" secondItem="C0P-I4-Mkc" secondAttribute="trailing" id="y21-82-DrU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="k2n-fU-Oxo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5bn-qr-av8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4710.6870229007627" y="-461.26760563380282"/>
+        </scene>
+        <!--Notlarim-->
+        <scene sceneID="Ezk-KB-6Td">
+            <objects>
+                <viewController id="cx1-p6-nui" customClass="Notlarim" customModule="NotlarimUygulamasi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="scl-yK-Hma">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EsW-C0-Rbj">
+                                <rect key="frame" x="0.0" y="44" width="393" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wa3-QT-ufr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wa3-QT-ufr" firstAttribute="trailing" secondItem="EsW-C0-Rbj" secondAttribute="trailing" id="50K-i1-rCM"/>
+                            <constraint firstItem="wa3-QT-ufr" firstAttribute="bottom" secondItem="EsW-C0-Rbj" secondAttribute="bottom" id="8ne-NF-PX8"/>
+                            <constraint firstItem="EsW-C0-Rbj" firstAttribute="leading" secondItem="wa3-QT-ufr" secondAttribute="leading" id="dDB-le-1xb"/>
+                            <constraint firstItem="EsW-C0-Rbj" firstAttribute="top" secondItem="wa3-QT-ufr" secondAttribute="top" id="exE-NA-rdO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="kuq-EO-LTi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UBI-VF-9x9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4042" y="335"/>
+        </scene>
+        <!--Harita-->
         <scene sceneID="bPo-gu-IEC">
             <objects>
                 <viewController id="cYJ-dP-qvE" customClass="Haritam" customModule="NotlarimUygulamasi" customModuleProvider="target" sceneMemberID="viewController">
@@ -184,7 +317,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FjR-BT-3Af">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                <rect key="frame" x="0.0" y="56" width="393" height="737"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                         </subviews>
@@ -199,14 +332,16 @@
                             <constraint firstItem="Fr9-gv-WkP" firstAttribute="bottom" secondItem="FjR-BT-3Af" secondAttribute="bottom" id="ue3-4X-Xip"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="FFg-Xt-Ym9"/>
+                    <navigationItem key="navigationItem" title="Harita" id="FFg-Xt-Ym9">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="0eq-rD-Aj1"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapKit" destination="FjR-BT-3Af" id="L6k-EY-Rud"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cTu-Qc-vii" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2055.7251908396947" y="35.91549295774648"/>
+            <point key="canvasLocation" x="3760" y="1073"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="VBj-3P-tcV">
@@ -228,19 +363,105 @@
             </objects>
             <point key="canvasLocation" x="-8" y="-180"/>
         </scene>
+        <!--Harita-->
+        <scene sceneID="Tg9-Ts-cjT">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WnP-C1-lbW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="l4b-MP-aeq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Harita" id="nxL-es-Kdx"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eYK-tx-QKA">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pcF-Nc-dXu">
+                        <rect key="frame" x="0.0" y="798" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="cYJ-dP-qvE" kind="relationship" relationship="rootViewController" id="E13-xu-1Rr"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="2137" y="1058"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PnW-xE-fcG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uUW-Qg-8eq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="IT6-Ty-4dB"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="254-y3-uft">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1OA-OE-RtC" kind="relationship" relationship="rootViewController" id="f98-gZ-4nf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NCB-Ui-PaP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3831.2977099236641" y="-461.26760563380282"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ekH-Es-oiU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a0G-25-zwo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pPP-io-v9l">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Frn-2I-grC" kind="relationship" relationship="rootViewController" id="PQe-tS-6eK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j1F-Tj-hJB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2035.8778625954199" y="-461.26760563380282"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="G1W-Ga-g5c">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3Wn-cR-jQA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="SPA-mH-BxA"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aGE-3B-c8C">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cx1-p6-nui" kind="relationship" relationship="rootViewController" id="XPR-SZ-u3P"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hLv-QY-85S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2990" y="335"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="7O4-BG-cEI"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="aniekle1" width="730" height="476"/>
         <image name="anilarim" width="742" height="1130"/>
+        <image name="fotosec" width="882" height="530"/>
         <image name="haritam" width="634" height="1018"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
         <image name="person" catalog="system" width="128" height="121"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tertiarySystemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
