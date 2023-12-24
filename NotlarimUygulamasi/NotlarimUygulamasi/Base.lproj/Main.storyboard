@@ -80,7 +80,7 @@
         <!--Favoriler-->
         <scene sceneID="QFc-zn-4WY">
             <objects>
-                <viewController id="pJD-xA-YEs" customClass="Notlarim" customModule="NotlarimUygulamasi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pJD-xA-YEs" customClass="Anilarim" customModule="NotlarimUygulamasi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yVa-x6-W99">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -283,17 +283,77 @@
             </objects>
             <point key="canvasLocation" x="4710.6870229007627" y="-461.26760563380282"/>
         </scene>
-        <!--Notlarim-->
+        <!--Anılar-->
         <scene sceneID="Ezk-KB-6Td">
             <objects>
-                <viewController id="cx1-p6-nui" customClass="Notlarim" customModule="NotlarimUygulamasi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cx1-p6-nui" customClass="Anilarim" customModule="NotlarimUygulamasi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="scl-yK-Hma">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EsW-C0-Rbj">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="180" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EsW-C0-Rbj">
                                 <rect key="frame" x="0.0" y="56" width="393" height="786"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="anilarHucre" id="wzC-4m-avT" customClass="AnilarimHucre" customModule="NotlarimUygulamasi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="180"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wzC-4m-avT" id="GbZ-aC-z2a">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="180"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrJ-SF-r8q">
+                                                    <rect key="frame" x="20" y="11" width="353" height="158"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VP9-ow-QNl">
+                                                            <rect key="frame" x="16" y="15" width="128" height="128"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="128" id="57D-It-nmY"/>
+                                                                <constraint firstAttribute="width" constant="128" id="ilo-lc-awE"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="YBv-c1-I8D">
+                                                            <rect key="frame" x="160" y="38.333333333333336" width="125.33333333333331" height="81.333333333333314"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anı Başlık" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDN-mG-S6A">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="125.33333333333333" height="36"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                                    <color key="textColor" red="0.26666668059999998" green="0.27843138579999999" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tarih ve Saat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAe-xc-My9">
+                                                                    <rect key="frame" x="0.0" y="60.999999999999993" width="97.666666666666671" height="20.333333333333336"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="YBv-c1-I8D" firstAttribute="centerY" secondItem="hrJ-SF-r8q" secondAttribute="centerY" id="A6k-8Z-Rck"/>
+                                                        <constraint firstItem="VP9-ow-QNl" firstAttribute="centerY" secondItem="hrJ-SF-r8q" secondAttribute="centerY" id="Dw0-QJ-b0p"/>
+                                                        <constraint firstItem="VP9-ow-QNl" firstAttribute="leading" secondItem="hrJ-SF-r8q" secondAttribute="leading" constant="16" id="F8U-zI-MqT"/>
+                                                        <constraint firstItem="YBv-c1-I8D" firstAttribute="leading" secondItem="VP9-ow-QNl" secondAttribute="trailing" constant="16" id="PEW-J7-UeW"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hrJ-SF-r8q" firstAttribute="leading" secondItem="GbZ-aC-z2a" secondAttribute="leadingMargin" id="JMu-5q-r2o"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="hrJ-SF-r8q" secondAttribute="trailing" id="bEF-HT-iOY"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="hrJ-SF-r8q" secondAttribute="bottom" id="xpQ-SQ-4zT"/>
+                                                <constraint firstItem="hrJ-SF-r8q" firstAttribute="top" secondItem="GbZ-aC-z2a" secondAttribute="topMargin" id="zoO-nj-Rkv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="aniBaslikLabel" destination="pDN-mG-S6A" id="Dhx-W4-ssU"/>
+                                            <outlet property="hucreArkaPlan" destination="hrJ-SF-r8q" id="B2s-yY-FEG"/>
+                                            <outlet property="imageViewSecilen" destination="VP9-ow-QNl" id="iCs-eF-vpg"/>
+                                            <outlet property="tarihVeSaatLabel" destination="vAe-xc-My9" id="ry7-oz-A49"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wa3-QT-ufr"/>
@@ -305,11 +365,76 @@
                             <constraint firstItem="EsW-C0-Rbj" firstAttribute="top" secondItem="wa3-QT-ufr" secondAttribute="top" id="exE-NA-rdO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="kuq-EO-LTi"/>
+                    <navigationItem key="navigationItem" title="Anılar" id="kuq-EO-LTi"/>
+                    <connections>
+                        <outlet property="tableView" destination="EsW-C0-Rbj" id="Es1-ii-dKu"/>
+                        <segue destination="5bj-EH-fQR" kind="show" id="8tV-5M-s01"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UBI-VF-9x9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4042" y="335"/>
+            <point key="canvasLocation" x="4095" y="349"/>
+        </scene>
+        <!--Detay Sayfasi-->
+        <scene sceneID="ylT-bf-5Hb">
+            <objects>
+                <viewController id="5bj-EH-fQR" customClass="DetaySayfasi" customModule="NotlarimUygulamasi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u9k-o5-FjK">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dV0-Hh-zlr">
+                                <rect key="frame" x="0.0" y="56" width="393" height="201"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ANI BAŞLIK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uyf-rG-NDz">
+                                <rect key="frame" x="46" y="280" width="293" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TARİH VE SAAT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QwS-Ix-Q8E">
+                                <rect key="frame" x="46" y="330" width="293" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OFd-pA-voL">
+                                <rect key="frame" x="0.0" y="380" width="393" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rX-86-Heo">
+                                <rect key="frame" x="16" y="528" width="361" height="277"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2EA-9Q-QXa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2EA-9Q-QXa" firstAttribute="trailing" secondItem="dV0-Hh-zlr" secondAttribute="trailing" id="Ny7-Ws-yZ3"/>
+                            <constraint firstItem="dV0-Hh-zlr" firstAttribute="top" secondItem="2EA-9Q-QXa" secondAttribute="top" id="QPN-CZ-KnW"/>
+                            <constraint firstItem="dV0-Hh-zlr" firstAttribute="top" secondItem="2EA-9Q-QXa" secondAttribute="top" id="YDu-hO-kQv"/>
+                            <constraint firstItem="dV0-Hh-zlr" firstAttribute="top" secondItem="2EA-9Q-QXa" secondAttribute="top" id="ky7-xR-qMO"/>
+                            <constraint firstItem="dV0-Hh-zlr" firstAttribute="leading" secondItem="2EA-9Q-QXa" secondAttribute="leading" id="m2r-PW-M4k"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="8Mg-h9-1As"/>
+                    <connections>
+                        <outlet property="alinanNotlar" destination="4rX-86-Heo" id="gto-yJ-xOI"/>
+                        <outlet property="aniBaslik" destination="Uyf-rG-NDz" id="Tpq-uW-pbC"/>
+                        <outlet property="imageViewSecilen" destination="dV0-Hh-zlr" id="LOn-h6-PY7"/>
+                        <outlet property="mapKitViewSecilen" destination="OFd-pA-voL" id="KeR-BK-KhA"/>
+                        <outlet property="tarihVeSaat" destination="QwS-Ix-Q8E" id="X07-x7-iCl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dhD-vf-Nyz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5205" y="349"/>
         </scene>
         <!--Harita-->
         <scene sceneID="bPo-gu-IEC">
@@ -432,8 +557,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3Wn-cR-jQA" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="SPA-mH-BxA"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aGE-3B-c8C">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="aGE-3B-c8C">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="108"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -443,7 +568,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLv-QY-85S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2990" y="335"/>
+            <point key="canvasLocation" x="3008" y="349"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -464,7 +589,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tertiarySystemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
