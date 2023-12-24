@@ -2,7 +2,7 @@
 //  Haritam.swift
 //  NotlarimUygulamasi
 //
-//  Created by Ogün Minkara on 22.12.2023.
+//  Created by Gizemnur Özden & Ogün Minkara 
 //
 
 import UIKit
@@ -16,8 +16,13 @@ class Haritam: UIViewController , MKMapViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+// back butonu eklendi
+        navigationController?.navigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(title: "<Back", style: .plain, target: self, action: #selector(backButton))
         
         mapKit.delegate = self
         
+    }
+    @objc func backButton () {
+        self.dismiss(animated: true, completion: nil)
     }
 }

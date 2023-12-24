@@ -275,6 +275,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="k2n-fU-Oxo"/>
+                    <connections>
+                        <outlet property="aniEkleMap" destination="C0P-I4-Mkc" id="rGS-Rq-cMn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5bn-qr-av8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -285,11 +288,11 @@
             <objects>
                 <viewController id="cx1-p6-nui" customClass="Notlarim" customModule="NotlarimUygulamasi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="scl-yK-Hma">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EsW-C0-Rbj">
-                                <rect key="frame" x="0.0" y="44" width="393" height="808"/>
+                                <rect key="frame" x="0.0" y="56" width="393" height="786"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -366,7 +369,6 @@
         <!--Harita-->
         <scene sceneID="Tg9-Ts-cjT">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WnP-C1-lbW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="l4b-MP-aeq" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Harita" id="nxL-es-Kdx"/>
@@ -383,6 +385,7 @@
                         <segue destination="cYJ-dP-qvE" kind="relationship" relationship="rootViewController" id="E13-xu-1Rr"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WnP-C1-lbW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2137" y="1058"/>
         </scene>
@@ -430,7 +433,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="SPA-mH-BxA"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aGE-3B-c8C">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -444,7 +447,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7O4-BG-cEI"/>
+        <segue reference="mZT-aZ-EVx"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="aniekle1" width="730" height="476"/>
@@ -461,7 +464,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tertiarySystemGroupedBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
