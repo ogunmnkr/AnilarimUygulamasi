@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  NotlarimUygulamasi
 //
-//  Created by Gizemnur Özden on 17.12.2023.
+//   Created by Gizemnur Özden & Ogün Minkara 
 //
 
 import UIKit
