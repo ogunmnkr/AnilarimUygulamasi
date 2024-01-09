@@ -7,6 +7,8 @@
 
 import UIKit
 import MapKit
+import Firebase
+import FirebaseStorage
 
 class AniEkle: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -78,9 +80,73 @@ class AniEkle: UIViewController, UIImagePickerControllerDelegate, UINavigationCo
         imageViewFotoSec.image = info[.originalImage] as? UIImage
         self.dismiss(animated: true)
     }
+    
+    func makeAlert(titleInput: String, messageInput: String) {
+        let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default)
+        alert.addAction(okButton)
+        self.present(alert, animated: true)
+        
+        
+    }
 
     @objc func saveButtonTiklandi () {
         //kaydetme kodları gelecek
+        
+        let storage = Storage.storage()
+        let storageReferance = storage.reference()
+         
+        //Storage içinde açtığım medya dosyası
+        let mediaFolder = storageReferance.child("media")
+        
+        if let data = imageViewFotoSec.image?.jpegData(compressionQuality: 0.5) {
+            
+            let uuid = UUID().uuidString
+            
+            let imageReferance = mediaFolder.child("\(uuid).jpg")
+            imageReferance.putData(data, metadata: nil) { (metadata, error) in
+                if error != nil {
+                    self.makeAlert(titleInput: "Error!", messageInput: error?.localizedDescription ?? "Error")
+                    
+                }else {
+                    
+                    imageReferance.downloadURL{ (url, error) in
+                        if error == nil {
+                            let imageUrl = url?.absoluteString
+                            
+                            
+                            //DATABASE
+                            
+                            let firestoreDatabase = Firestore.firestore()
+                            
+                            var firestoreReference : DocumentReference? = nil
+                            
+                            let firestoreAni = [ "imageUrl" : imageUrl!, "kayıtBy" : Auth.auth().currentUser!.email!, "anibaslik": self.aniBaslikText.text!, "date" : self.tarihSaatText.text!, "not": self.notTextView.text!, "favori" : 0 ] as [String: Any]
+                            
+                            firestoreReference = firestoreDatabase.collection("Anilar").addDocument(data: firestoreAni, completion: {(error) in
+                                if error != nil {
+                                    self.makeAlert(titleInput: "Error!", messageInput: error?.localizedDescription ?? "Error")
+                                }else {
+                                    //Düzenlenecek.
+                                    self.dismiss(animated: true)
+                                }
+                            })
+ 
+                            
+                            
+                            
+                        }
+                        
+                     
+                    }
+                }
+            }
+            
+            
+            
+            
+            
+        }
         self.dismiss(animated: true)
     }
     @objc func backButtonTiklandi () {
