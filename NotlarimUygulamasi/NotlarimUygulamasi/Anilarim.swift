@@ -8,6 +8,8 @@
 import UIKit
 import Firebase
 import FirebaseFirestore
+import SDWebImage
+
 class Anilarim: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     
@@ -29,15 +31,28 @@ class Anilarim: UIViewController, UITableViewDelegate, UITableViewDataSource{
         getDataFromFirestore()
     }
     
+    //DATABASE
     
     func getDataFromFirestore(){
         
+        
         let fireStoreDatabase = Firestore.firestore()
-        fireStoreDatabase.collection("Anilar").addSnapshotListener { (snapshot, error )in
+        
+        fireStoreDatabase.collection("Anilar").order(by: "date", descending: true).addSnapshotListener { (snapshot, error )in
+            
             if error != nil {
                 print(error?.localizedDescription)
             }else {
                 if snapshot?.isEmpty != true && snapshot != nil {
+                    
+                    self.aniBaslikArray.removeAll(keepingCapacity: false)
+                    self.kullaniciFotoArray.removeAll(keepingCapacity: false)
+                    self.tarihArray.removeAll(keepingCapacity: false)
+                    self.notArray.removeAll(keepingCapacity: false)
+                    
+                    
+                    
+                    
                     for document in  snapshot!.documents {
                         let documentID = document.documentID
                         
@@ -72,11 +87,12 @@ class Anilarim: UIViewController, UITableViewDelegate, UITableViewDataSource{
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let hucre = tableView.dequeueReusableCell(withIdentifier: "anilarHucre", for: indexPath) as! AnilarimHucre
        
     
         hucre.aniBaslikLabel.text = aniBaslikArray[indexPath.row]
-        hucre.imageViewSecilen.image = UIImage(named: "fotosec")
+        hucre.imageViewSecilen.sd_setImage(with: URL(string: self.kullaniciFotoArray[indexPath.row]))
         hucre.tarihVeSaatLabel.text = tarihArray[indexPath.row]
        
         return hucre
