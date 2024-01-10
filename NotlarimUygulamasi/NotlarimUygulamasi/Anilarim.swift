@@ -80,7 +80,14 @@ class Anilarim: UIViewController, UITableViewDelegate, UITableViewDataSource{
         
     }
     
+    override func performSegue(withIdentifier identifier: String, sender: Any?) {
+        <#code#>
+    }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        <#code#>
+    }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return aniBaslikArray.count

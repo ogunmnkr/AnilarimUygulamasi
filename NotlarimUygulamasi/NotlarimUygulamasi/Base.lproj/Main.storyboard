@@ -288,11 +288,11 @@
             <objects>
                 <viewController id="cx1-p6-nui" customClass="Anilarim" customModule="NotlarimUygulamasi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="scl-yK-Hma">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="180" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EsW-C0-Rbj">
-                                <rect key="frame" x="0.0" y="56" width="393" height="786"/>
+                                <rect key="frame" x="0.0" y="44" width="393" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="anilarHucre" id="wzC-4m-avT" customClass="AnilarimHucre" customModule="NotlarimUygulamasi" customModuleProvider="target">
@@ -380,7 +380,7 @@
             <objects>
                 <viewController id="5bj-EH-fQR" customClass="DetaySayfasi" customModule="NotlarimUygulamasi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u9k-o5-FjK">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dV0-Hh-zlr">
@@ -558,7 +558,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="SPA-mH-BxA"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="aGE-3B-c8C">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="108"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -572,7 +572,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="mZT-aZ-EVx"/>
+        <segue reference="7O4-BG-cEI"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="aniekle1" width="730" height="476"/>
@@ -589,7 +589,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tertiarySystemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

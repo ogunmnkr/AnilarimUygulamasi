@@ -121,7 +121,7 @@ class AniEkle: UIViewController, UIImagePickerControllerDelegate, UINavigationCo
                             
                             var firestoreReference : DocumentReference? = nil
                             
-                            let firestoreAni = [ "imageUrl" : imageUrl!, "kayıtBy" : Auth.auth().currentUser!.email!, "aniBaslik": self.aniBaslikText.text!, "date" : self.tarihSaatText.text!, "not": self.notTextView.text!,] as [String: Any]
+                            let firestoreAni = [ "imageUrl" : imageUrl!, "kayıtBy" : Auth.auth().currentUser!.email!, "aniBaslik": self.aniBaslikText.text!, "date" : self.tarihSaatText.text!, "not": self.notTextView.text!, ] as [String: Any]
                             
                             firestoreReference = firestoreDatabase.collection("Anilar").addDocument(data: firestoreAni, completion: {(error) in
                                 if error != nil {
