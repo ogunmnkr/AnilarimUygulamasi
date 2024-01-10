@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        //Kullanıcı adıyla giriş yaptıktan sonra uygulama her açıldığında tekrar giriş yapmamak için uygulamanın bir kere girince hatırlamasını sağlayan kod bloğu lazım onun için sceneDelegate a ekleme yapıyorum.Oraya bak.
+//Kullanıcı adıyla giriş yaptıktan sonra uygulama her açıldığında tekrar giriş yapmamak için uygulamanın bir kere girince hatırlamasını sağlayan kod bloğu lazım onun için sceneDelegate a ekleme yapıyorum.Oraya bak.
      
         
         

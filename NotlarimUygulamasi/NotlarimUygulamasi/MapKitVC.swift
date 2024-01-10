@@ -8,17 +8,21 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Firebase
 
 //Ani ekle kısmının içindeki mapKit içindir.
 // lokasyon yöneticisi ile kullanıcının bulunduğu konumda haritanın açılması
 // için gerekli işlemler yapıldı.
     
 
-class MapKitVC: UIViewController , MKMapViewDelegate , CLLocationManagerDelegate {
+class MapKitVC: UIViewController , MKMapViewDelegate , CLLocationManagerDelegate  {
     
-
+    
     @IBOutlet weak var aniEkleMap: MKMapView!
     var lokasyonYönetici = CLLocationManager()
+    var secilenEnlem = ""
+    var secilenBoylam = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,14 +34,29 @@ class MapKitVC: UIViewController , MKMapViewDelegate , CLLocationManagerDelegate
         lokasyonYönetici.startUpdatingLocation()
         
         let jestAlgılayıcı = UILongPressGestureRecognizer(target: self, action: #selector(pinSecici(jestAlgilayici:)))
-        jestAlgılayıcı.minimumPressDuration = 3
+        jestAlgılayıcı.minimumPressDuration = 2
         aniEkleMap.addGestureRecognizer(jestAlgılayıcı)
         
         
-// geri dönüş butonu eklendi.
+        // geri dönüş butonu eklendi.
         navigationController?.navigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(title: "<", style: .plain, target: self, action: #selector(geriİkonuTiklandi))
         
+        
+        
+       
+        
     }
+    
+    func makeAlert(titleInput: String, messageInput: String) {
+        let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default)
+        alert.addAction(okButton)
+        self.present(alert, animated: true)
+        
+        
+    }
+    
+    
 // pin oluşturma için gerekli kodlar yazıldı.
     @objc func pinSecici(jestAlgilayici:UILongPressGestureRecognizer) {
         
@@ -51,27 +70,61 @@ class MapKitVC: UIViewController , MKMapViewDelegate , CLLocationManagerDelegate
             pin.title = "Seçilen Konum"
             self.aniEkleMap.addAnnotation(pin)
             
+            
+//Seçilen pin koordinatlarını veritabanına aktarmak için string değerlere çevirip değişkenlere atadım.
+            self.secilenEnlem = String(dokunulanKoordinat.latitude)
+            self.secilenBoylam = String(dokunulanKoordinat.longitude)
+            
+          
+            
+// Seçilen pinin enlem ve boylam değerleri firebaseye aktarıldı aşağıda.
+            
+            let firestoreDatabase = Firestore.firestore()
+            
+            var firestoreReference : DocumentReference? = nil
+            
+            let firestoreAni = [ "secilenEnlem" : self.secilenEnlem, "secilenBoylam" : self.secilenBoylam ] as [String: Any]
+            
+            firestoreReference = firestoreDatabase.collection("Anilar").addDocument(data: firestoreAni, completion: {(error) in
+                if error != nil {
+                    self.makeAlert(titleInput: "Error!", messageInput: error?.localizedDescription ?? "Error")
+                }else {
+                    //Düzenlenecek.
+                    //self.dismiss(animated: true)
+                }
+            })
+
+            
+            
+            
         }
-       
     }
     
- // sürekli gelen güncel konum aşağıda dizi halinde verilmiştir.
-// dizinin ilk elemanına göre enlem boylam işaretlemesi yaptım ;
+    
+    // sürekli gelen güncel konum aşağıda dizi halinde verilmiştir.
+    // dizinin ilk elemanına göre enlem boylam işaretlemesi yaptım ;
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let lokasyon = CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude)
         
-// span özelliği ile haritanın zoom derecesini seçtim.
-        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+        // span özelliği ile haritanın zoom derecesini seçtim.
+        let span = MKCoordinateSpan(latitudeDelta: 0.1907, longitudeDelta: 0.1907)
         let region = MKCoordinateRegion(center: lokasyon, span: span)
         aniEkleMap.setRegion(region, animated: true)
         
         
     }
     
+    
+    
+    
+    
     @objc func geriİkonuTiklandi() {
         self.dismiss(animated: true)
     }
     
-
+                                                                                        
+                                                                                    
 }
+                                                                                    
+                                                                                    

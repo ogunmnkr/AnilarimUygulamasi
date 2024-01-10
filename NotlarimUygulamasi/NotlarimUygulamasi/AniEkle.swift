@@ -24,23 +24,23 @@ class AniEkle: UIViewController, UIImagePickerControllerDelegate, UINavigationCo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      //Fotoğraf seçin üstüne basılınca fotoğraf seçme yazıldı.
-      //Albüme gidiş yazıldı.
+//Fotoğraf seçin üstüne basılınca fotoğraf seçme yazıldı.
+//Albüme gidiş yazıldı.
         imageViewFotoSec.isUserInteractionEnabled = true
         let fotografSec = UITapGestureRecognizer(target: self, action: #selector(fotografSec))
         imageViewFotoSec.addGestureRecognizer(fotografSec)
         
-        //NAvigation bar'a Save kısmı eklendi.
+//NAvigation bar'a Save kısmı eklendi.
         navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(title: "SAVE", style: .plain, target: self, action: #selector(saveButtonTiklandi))
-        //navigatiın bar'a back buttonu eklendi
+//navigatiın bar'a back buttonu eklendi
         navigationController?.navigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(title: "<Back", style: .plain, target: self, action: #selector(backButtonTiklandi))
-        //mapkite tıklanınca geçiş yapıldı.
+//mapkite tıklanınca geçiş yapıldı.
         mapKitView.isUserInteractionEnabled = true
         let mapKitSec = UITapGestureRecognizer(target: self, action: #selector(mapKitTiklandi))
         mapKitView.addGestureRecognizer(mapKitSec)
         
         
-        //Tarih ve Saat seçme özellikleri eklendi.
+//Tarih ve Saat seçme özellikleri eklendi.
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = .dateAndTime
         tarihSaatText.inputView = datePicker
@@ -91,12 +91,12 @@ class AniEkle: UIViewController, UIImagePickerControllerDelegate, UINavigationCo
     }
 
     @objc func saveButtonTiklandi () {
-        //kaydetme kodları gelecek
+//kaydetme kodları gelecek
         
         let storage = Storage.storage()
         let storageReferance = storage.reference()
          
-        //Storage içinde açtığım medya dosyası
+//Storage içinde açtığım medya dosyası
         let mediaFolder = storageReferance.child("media")
         
         if let data = imageViewFotoSec.image?.jpegData(compressionQuality: 0.5) {
@@ -115,7 +115,7 @@ class AniEkle: UIViewController, UIImagePickerControllerDelegate, UINavigationCo
                             let imageUrl = url?.absoluteString
                             
                             
-                            //DATABASE
+//DATABASE
                             
                             let firestoreDatabase = Firestore.firestore()
                             
@@ -127,8 +127,8 @@ class AniEkle: UIViewController, UIImagePickerControllerDelegate, UINavigationCo
                                 if error != nil {
                                     self.makeAlert(titleInput: "Error!", messageInput: error?.localizedDescription ?? "Error")
                                 }else {
-                                    //Düzenlenecek.
-                                    //self.dismiss(animated: true)
+    //Düzenlenecek.
+    //self.dismiss(animated: true)
                                 }
                             })
  
@@ -156,4 +156,6 @@ class AniEkle: UIViewController, UIImagePickerControllerDelegate, UINavigationCo
     @objc func mapKitTiklandi (){
         performSegue(withIdentifier: "toMapKitVC", sender: nil)
     }
+    
+   
 }

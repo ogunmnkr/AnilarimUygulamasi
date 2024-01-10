@@ -80,7 +80,7 @@
         <!--Favoriler-->
         <scene sceneID="QFc-zn-4WY">
             <objects>
-                <viewController id="pJD-xA-YEs" customClass="Anilarim" customModule="NotlarimUygulamasi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pJD-xA-YEs" customClass="Favorilerim" customModule="NotlarimUygulamasi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yVa-x6-W99">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -195,13 +195,16 @@
                                 <rect key="frame" x="76" y="317" width="265" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="aniBaslik:" destination="eCh-3b-d65" eventType="editingDidEnd" id="jhI-Es-Mp3"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TARİH VE SAAT" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gyF-iQ-Wgs">
                                 <rect key="frame" x="76" y="379" width="265" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RK1-fb-gHg">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="mapKitView" translatesAutoresizingMaskIntoConstraints="NO" id="RK1-fb-gHg">
                                 <rect key="frame" x="76" y="450" width="265" height="97"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="97" id="7Z6-2C-Ac1"/>
@@ -249,6 +252,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k1C-mp-xjO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="eCh-3b-d65" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2962.5954198473282" y="-461.26760563380282"/>
         </scene>
