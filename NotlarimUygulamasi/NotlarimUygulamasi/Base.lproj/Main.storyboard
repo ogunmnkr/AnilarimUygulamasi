@@ -197,6 +197,7 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="aniBaslik:" destination="eCh-3b-d65" eventType="editingDidEnd" id="jhI-Es-Mp3"/>
+                                    <action selector="aniBaslikMapKit:" destination="eCh-3b-d65" eventType="editingDidEnd" id="rmc-2O-ydK"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TARİH VE SAAT" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gyF-iQ-Wgs">
@@ -372,7 +373,7 @@
                     <navigationItem key="navigationItem" title="Anılar" id="kuq-EO-LTi"/>
                     <connections>
                         <outlet property="tableView" destination="EsW-C0-Rbj" id="Es1-ii-dKu"/>
-                        <segue destination="5bj-EH-fQR" kind="show" id="8tV-5M-s01"/>
+                        <segue destination="5bj-EH-fQR" kind="show" identifier="toDetailVC" id="8tV-5M-s01"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UBI-VF-9x9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -387,31 +388,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dV0-Hh-zlr">
-                                <rect key="frame" x="0.0" y="56" width="393" height="201"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dV0-Hh-zlr">
+                                <rect key="frame" x="0.0" y="96" width="393" height="201"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ANI BAŞLIK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uyf-rG-NDz">
-                                <rect key="frame" x="46" y="280" width="293" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TARİH VE SAAT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QwS-Ix-Q8E">
+                                <rect key="frame" x="50" y="368" width="293" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="IbI-ss-Cba"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TARİH VE SAAT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QwS-Ix-Q8E">
-                                <rect key="frame" x="46" y="330" width="293" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OFd-pA-voL">
-                                <rect key="frame" x="0.0" y="380" width="393" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OFd-pA-voL">
+                                <rect key="frame" x="0.0" y="429" width="393" height="157"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="157" id="fqw-xd-G21"/>
+                                </constraints>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rX-86-Heo">
-                                <rect key="frame" x="16" y="528" width="361" height="277"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rX-86-Heo">
+                                <rect key="frame" x="16" y="582" width="361" height="223"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ANI BAŞLIK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uyf-rG-NDz">
+                                <rect key="frame" x="50" y="318" width="293" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="izO-If-kaO"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -420,11 +426,23 @@
                         <viewLayoutGuide key="safeArea" id="2EA-9Q-QXa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="2EA-9Q-QXa" firstAttribute="trailing" secondItem="dV0-Hh-zlr" secondAttribute="trailing" id="Ny7-Ws-yZ3"/>
-                            <constraint firstItem="dV0-Hh-zlr" firstAttribute="top" secondItem="2EA-9Q-QXa" secondAttribute="top" id="QPN-CZ-KnW"/>
-                            <constraint firstItem="dV0-Hh-zlr" firstAttribute="top" secondItem="2EA-9Q-QXa" secondAttribute="top" id="YDu-hO-kQv"/>
-                            <constraint firstItem="dV0-Hh-zlr" firstAttribute="top" secondItem="2EA-9Q-QXa" secondAttribute="top" id="ky7-xR-qMO"/>
-                            <constraint firstItem="dV0-Hh-zlr" firstAttribute="leading" secondItem="2EA-9Q-QXa" secondAttribute="leading" id="m2r-PW-M4k"/>
+                            <constraint firstItem="OFd-pA-voL" firstAttribute="centerX" secondItem="4rX-86-Heo" secondAttribute="centerX" id="0Ry-sC-dgF"/>
+                            <constraint firstItem="2EA-9Q-QXa" firstAttribute="bottom" secondItem="4rX-86-Heo" secondAttribute="bottom" constant="47" id="1rh-Vb-oh2"/>
+                            <constraint firstItem="OFd-pA-voL" firstAttribute="top" secondItem="QwS-Ix-Q8E" secondAttribute="bottom" constant="19" id="6aP-P7-08t"/>
+                            <constraint firstItem="dV0-Hh-zlr" firstAttribute="leading" secondItem="OFd-pA-voL" secondAttribute="leading" id="6dh-3H-6mk"/>
+                            <constraint firstItem="4rX-86-Heo" firstAttribute="trailing" secondItem="u9k-o5-FjK" secondAttribute="trailingMargin" id="8ah-pq-aGt"/>
+                            <constraint firstItem="dV0-Hh-zlr" firstAttribute="top" secondItem="2EA-9Q-QXa" secondAttribute="top" id="Hf0-f8-zl7"/>
+                            <constraint firstItem="4rX-86-Heo" firstAttribute="top" secondItem="OFd-pA-voL" secondAttribute="bottom" constant="-4" id="Hou-fz-D7v"/>
+                            <constraint firstItem="dV0-Hh-zlr" firstAttribute="trailing" secondItem="OFd-pA-voL" secondAttribute="trailing" id="HrK-Wq-NR7"/>
+                            <constraint firstItem="dV0-Hh-zlr" firstAttribute="leading" secondItem="2EA-9Q-QXa" secondAttribute="leading" id="Ksd-ek-INw"/>
+                            <constraint firstItem="Uyf-rG-NDz" firstAttribute="trailing" secondItem="QwS-Ix-Q8E" secondAttribute="trailing" id="RCn-H3-dUS"/>
+                            <constraint firstItem="4rX-86-Heo" firstAttribute="leading" secondItem="u9k-o5-FjK" secondAttribute="leadingMargin" id="RoA-3Z-iup"/>
+                            <constraint firstItem="Uyf-rG-NDz" firstAttribute="leading" secondItem="2EA-9Q-QXa" secondAttribute="leading" constant="50" id="UTQ-GY-DCk"/>
+                            <constraint firstItem="QwS-Ix-Q8E" firstAttribute="top" secondItem="dV0-Hh-zlr" secondAttribute="bottom" constant="71" id="YDV-gl-9PC"/>
+                            <constraint firstItem="QwS-Ix-Q8E" firstAttribute="top" secondItem="Uyf-rG-NDz" secondAttribute="bottom" constant="8" id="fVc-Jw-Y1K"/>
+                            <constraint firstItem="Uyf-rG-NDz" firstAttribute="leading" secondItem="QwS-Ix-Q8E" secondAttribute="leading" id="u8N-Fl-G2T"/>
+                            <constraint firstItem="2EA-9Q-QXa" firstAttribute="trailing" secondItem="Uyf-rG-NDz" secondAttribute="trailing" constant="50" id="vHW-MW-zoZ"/>
+                            <constraint firstItem="Uyf-rG-NDz" firstAttribute="top" secondItem="2EA-9Q-QXa" secondAttribute="top" constant="222" id="vr3-2P-xxJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8Mg-h9-1As"/>
@@ -438,7 +456,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhD-vf-Nyz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5205" y="349"/>
+            <point key="canvasLocation" x="5203.8167938931292" y="348.59154929577466"/>
         </scene>
         <!--Harita-->
         <scene sceneID="bPo-gu-IEC">
@@ -593,7 +611,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tertiarySystemGroupedBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

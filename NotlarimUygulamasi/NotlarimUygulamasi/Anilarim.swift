@@ -20,6 +20,7 @@ class Anilarim: UIViewController, UITableViewDelegate, UITableViewDataSource{
     var kullaniciFotoArray = [String()]
     var notArray = [String()]
     var tarihArray = [String()]
+    var secilenAniId = ""
     
     
     override func viewDidLoad() {
@@ -80,12 +81,17 @@ class Anilarim: UIViewController, UITableViewDelegate, UITableViewDataSource{
         
     }
     
-    override func performSegue(withIdentifier identifier: String, sender: Any?) {
-        <#code#>
+    //tıklandığında detay sayfasına geçiş kodları
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailVC" {
+            let destinationVC = segue.destination as! DetaySayfasi
+            destinationVC.chosenPlaceId = secilenAniId
+        }
     }
-    
+    //tıkladnığında detay sayfasına geçiş kodları
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        secilenAniId = aniBaslikArray[indexPath.row]
+        self.performSegue(withIdentifier: "toDetailVC", sender: nil)
     }
 
     

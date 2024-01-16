@@ -16,13 +16,11 @@ import Firebase
     
 
 class MapKitVC: UIViewController , MKMapViewDelegate , CLLocationManagerDelegate  {
-    
-    
+   
     @IBOutlet weak var aniEkleMap: MKMapView!
     var lokasyonYönetici = CLLocationManager()
     var secilenEnlem = ""
     var secilenBoylam = ""
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +65,7 @@ class MapKitVC: UIViewController , MKMapViewDelegate , CLLocationManagerDelegate
             
             let pin = MKPointAnnotation()
             pin.coordinate = dokunulanKoordinat
-            pin.title = "Seçilen Konum"
+            pin.title = "Secilen Konum"
             self.aniEkleMap.addAnnotation(pin)
             
             
