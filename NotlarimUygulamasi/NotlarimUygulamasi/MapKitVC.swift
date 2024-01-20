@@ -40,6 +40,7 @@ class MapKitVC: UIViewController , MKMapViewDelegate , CLLocationManagerDelegate
         navigationController?.navigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(title: "<", style: .plain, target: self, action: #selector(geriİkonuTiklandi))
         
         
+        getDataFromFirebase()
         
        
         
@@ -65,7 +66,7 @@ class MapKitVC: UIViewController , MKMapViewDelegate , CLLocationManagerDelegate
             
             let pin = MKPointAnnotation()
             pin.coordinate = dokunulanKoordinat
-            pin.title = "Secilen Konum"
+            pin.title = "Seçilen Konum "
             self.aniEkleMap.addAnnotation(pin)
             
             
@@ -77,31 +78,35 @@ class MapKitVC: UIViewController , MKMapViewDelegate , CLLocationManagerDelegate
             
 // Seçilen pinin enlem ve boylam değerleri firebaseye aktarıldı aşağıda.
             
-            let firestoreDatabase = Firestore.firestore()
-            
-            var firestoreReference : DocumentReference? = nil
-            
-            let firestoreAni = [ "secilenEnlem" : self.secilenEnlem, "secilenBoylam" : self.secilenBoylam ] as [String: Any]
-            
-            firestoreReference = firestoreDatabase.collection("Anilar").addDocument(data: firestoreAni, completion: {(error) in
-                if error != nil {
-                    self.makeAlert(titleInput: "Error!", messageInput: error?.localizedDescription ?? "Error")
-                }else {
-                    //Düzenlenecek.
-                    //self.dismiss(animated: true)
-                }
-            })
-
+           
             
             
             
         }
     }
     
+   
+    func getDataFromFirebase() {
+        let firestoreDatabase = Firestore.firestore()
+        
+        var firestoreReference : DocumentReference? = nil
+        
+        let firestoreAni = [ "secilenEnlem" : self.secilenEnlem, "secilenBoylam" : self.secilenBoylam ] as [String: Any]
+        
+        firestoreReference = firestoreDatabase.collection("Anilar").addDocument(data: firestoreAni, completion: {(error) in
+            if error != nil {
+                self.makeAlert(titleInput: "Error!", messageInput: error?.localizedDescription ?? "Error")
+            }else {
+                //Düzenlenecek.
+                //self.dismiss(animated: true)
+            }
+        })
+
+        
+    }
     
     // sürekli gelen güncel konum aşağıda dizi halinde verilmiştir.
     // dizinin ilk elemanına göre enlem boylam işaretlemesi yaptım ;
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let lokasyon = CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude)
         
@@ -122,7 +127,12 @@ class MapKitVC: UIViewController , MKMapViewDelegate , CLLocationManagerDelegate
     }
     
                                                                                         
-                                                                                    
+    @IBAction func kaydetButon(_ sender: Any) {
+        getDataFromFirebase()
+        
+        
+    }
+    
 }
                                                                                     
                                                                                     
