@@ -266,17 +266,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0P-I4-Mkc">
-                                <rect key="frame" x="0.0" y="44" width="393" height="808"/>
+                                <rect key="frame" x="0.0" y="44" width="393" height="714"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DbF-p6-RyO">
+                                <rect key="frame" x="123" y="766" width="147" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="vlC-m9-LmP"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Kaydet"/>
+                                <connections>
+                                    <action selector="kaydetButon:" destination="1OA-OE-RtC" eventType="touchUpInside" id="iEH-Am-CTc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NYx-cZ-4cz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="C0P-I4-Mkc" firstAttribute="top" secondItem="NYx-cZ-4cz" secondAttribute="top" id="BtD-tT-NYh"/>
-                            <constraint firstItem="NYx-cZ-4cz" firstAttribute="bottom" secondItem="C0P-I4-Mkc" secondAttribute="bottom" id="Duk-FU-Ihq"/>
-                            <constraint firstItem="C0P-I4-Mkc" firstAttribute="leading" secondItem="NYx-cZ-4cz" secondAttribute="leading" id="f0Z-n0-Vp2"/>
-                            <constraint firstItem="NYx-cZ-4cz" firstAttribute="trailing" secondItem="C0P-I4-Mkc" secondAttribute="trailing" id="y21-82-DrU"/>
+                            <constraint firstItem="C0P-I4-Mkc" firstAttribute="leading" secondItem="NYx-cZ-4cz" secondAttribute="leading" id="6Cn-WE-35K"/>
+                            <constraint firstItem="C0P-I4-Mkc" firstAttribute="centerX" secondItem="6eJ-LG-deh" secondAttribute="centerX" id="Bb7-Ux-vez"/>
+                            <constraint firstItem="DbF-p6-RyO" firstAttribute="top" secondItem="C0P-I4-Mkc" secondAttribute="bottom" constant="8" id="MAO-fL-p2R"/>
+                            <constraint firstItem="C0P-I4-Mkc" firstAttribute="centerX" secondItem="DbF-p6-RyO" secondAttribute="centerX" id="OpF-bt-Y7r"/>
+                            <constraint firstItem="DbF-p6-RyO" firstAttribute="leading" secondItem="NYx-cZ-4cz" secondAttribute="leading" constant="123" id="QRj-Ab-i84"/>
+                            <constraint firstItem="NYx-cZ-4cz" firstAttribute="bottom" secondItem="DbF-p6-RyO" secondAttribute="bottom" constant="40" id="S2G-Jd-lD3"/>
+                            <constraint firstItem="C0P-I4-Mkc" firstAttribute="top" secondItem="NYx-cZ-4cz" secondAttribute="top" id="hjJ-XV-Reo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="k2n-fU-Oxo"/>
@@ -286,7 +300,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5bn-qr-av8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4710.6870229007627" y="-461.26760563380282"/>
+            <point key="canvasLocation" x="4709.160305343511" y="-461.26760563380282"/>
         </scene>
         <!--Anılar-->
         <scene sceneID="Ezk-KB-6Td">
