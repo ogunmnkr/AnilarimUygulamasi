@@ -121,7 +121,7 @@ class AniEkle: UIViewController, UIImagePickerControllerDelegate, UINavigationCo
                             
                             var firestoreReference : DocumentReference? = nil
                             
-                            let firestoreAni = [ "imageUrl" : imageUrl!, "kayıtBy" : Auth.auth().currentUser!.email!, "aniBaslik": self.aniBaslikText.text!, "date" : self.tarihSaatText.text!, "not": self.notTextView.text!, ] as [String: Any]
+                            let firestoreAni = [ "imageUrl" : imageUrl!, "kayıtBy" : Auth.auth().currentUser!.email!, "aniBaslik": self.aniBaslikText.text!, "date" : self.tarihSaatText.text!, "not": self.notTextView.text!,"secilenEnlem": AniEkleModel.sharedIntance.secilenEnlem,"secilenBoylam" : AniEkleModel.sharedIntance.secilenBoylam] as [String: Any]
                             
                             firestoreReference = firestoreDatabase.collection("Anilar").addDocument(data: firestoreAni, completion: {(error) in
                                 if error != nil {
@@ -154,7 +154,29 @@ class AniEkle: UIViewController, UIImagePickerControllerDelegate, UINavigationCo
     }
     
     @objc func mapKitTiklandi (){
-        performSegue(withIdentifier: "toMapKitVC", sender: nil)
+        
+        if aniBaslikText.text != "" {
+            if let secilenFoto = imageViewFotoSec.image {
+                
+                let aniEkleModel = AniEkleModel.sharedIntance
+                aniEkleModel.anibaslik = aniBaslikText.text!
+                aniEkleModel.tarihvesaat = tarihSaatText.text!
+                aniEkleModel.not = notTextView.text!
+                aniEkleModel.secilenImage = secilenFoto
+                
+            }
+            performSegue(withIdentifier: "toMapKitVC", sender: nil)
+            
+        } else {
+            let alert = UIAlertController(title: "Error!", message: "Anı Başlık veya Fotoğraf eksik", preferredStyle: UIAlertController.Style.alert)
+            let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+            alert.addAction(okButton)
+            present(alert, animated: true, completion: nil)
+        }
+        
+        
+      
+       
     }
     
    

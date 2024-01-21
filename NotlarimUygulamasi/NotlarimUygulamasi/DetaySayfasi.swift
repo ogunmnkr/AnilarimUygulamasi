@@ -15,11 +15,13 @@ class DetaySayfasi: UIViewController {
     //Anilardan sonra yönlenecek detay sayfası tanımlandı.
     @IBOutlet weak var imageViewSecilen: UIImageView!
     
+    
+    @IBOutlet weak var mapKitViewSecilen: MKMapView!
     @IBOutlet weak var aniBaslik: UILabel!
     
     @IBOutlet weak var tarihVeSaat: UILabel!
     
-    @IBOutlet weak var mapKitViewSecilen: MKMapView!
+  
     
     @IBOutlet weak var alinanNotlar: UILabel!
     
@@ -31,6 +33,7 @@ class DetaySayfasi: UIViewController {
         super.viewDidLoad()
         
         getFromData()
+        print(secilenEnlem)
         
     }
     //detaylar sayfasına veri tabanından bilgileri çeken kodlar.
@@ -69,6 +72,7 @@ class DetaySayfasi: UIViewController {
                         if let secilenEnlem1 = document.get("secilenEnlem") as? String {
                             if let secilenEnlemDouble = Double(secilenEnlem1) {
                                 self.secilenEnlem = secilenEnlemDouble
+                                
                             }
                         }
                         if let imageData = document.get("imageUrl") as? String {

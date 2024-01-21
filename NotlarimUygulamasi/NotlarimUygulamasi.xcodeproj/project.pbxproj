@@ -29,6 +29,7 @@
 		C5B972042B2F67A200C8E5EA /* Anasayfa.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B972032B2F67A200C8E5EA /* Anasayfa.swift */; };
 		C5B972062B2F67B900C8E5EA /* Anilarim.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B972052B2F67B900C8E5EA /* Anilarim.swift */; };
 		C5B972082B2F67CA00C8E5EA /* Hesap.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B972072B2F67CA00C8E5EA /* Hesap.swift */; };
+		C5BDB0DF2B5C09C000B5E13A /* AniEkleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BDB0DE2B5C09C000B5E13A /* AniEkleModel.swift */; };
 		F91A34092B35BD8A0027B00A /* Haritam.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A34082B35BD8A0027B00A /* Haritam.swift */; };
 		F95EA4462B4E8BA800DCD362 /* Favorilerim.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95EA4452B4E8BA800DCD362 /* Favorilerim.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,7 @@
 		C5B972032B2F67A200C8E5EA /* Anasayfa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anasayfa.swift; sourceTree = "<group>"; };
 		C5B972052B2F67B900C8E5EA /* Anilarim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anilarim.swift; sourceTree = "<group>"; };
 		C5B972072B2F67CA00C8E5EA /* Hesap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hesap.swift; sourceTree = "<group>"; };
+		C5BDB0DE2B5C09C000B5E13A /* AniEkleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AniEkleModel.swift; sourceTree = "<group>"; };
 		F91A34082B35BD8A0027B00A /* Haritam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haritam.swift; sourceTree = "<group>"; };
 		F95EA4452B4E8BA800DCD362 /* Favorilerim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorilerim.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +102,7 @@
 				C5B07AF42B36FBCF00E7D8D7 /* AniEkle.swift */,
 				C5B972052B2F67B900C8E5EA /* Anilarim.swift */,
 				C54857232B3898A500463959 /* AnilarimHucre.swift */,
+				C5BDB0DE2B5C09C000B5E13A /* AniEkleModel.swift */,
 				F95EA4452B4E8BA800DCD362 /* Favorilerim.swift */,
 				C5B972072B2F67CA00C8E5EA /* Hesap.swift */,
 				C54857212B387EE700463959 /* DetaySayfasi.swift */,
@@ -206,6 +209,7 @@
 				F95EA4462B4E8BA800DCD362 /* Favorilerim.swift in Sources */,
 				C5B972082B2F67CA00C8E5EA /* Hesap.swift in Sources */,
 				C5B972042B2F67A200C8E5EA /* Anasayfa.swift in Sources */,
+				C5BDB0DF2B5C09C000B5E13A /* AniEkleModel.swift in Sources */,
 				C5B971EA2B2F46DE00C8E5EA /* AppDelegate.swift in Sources */,
 				C5B971EC2B2F46DE00C8E5EA /* SceneDelegate.swift in Sources */,
 				F91A34092B35BD8A0027B00A /* Haritam.swift in Sources */,

@@ -14,6 +14,7 @@ class Anilarim: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
     var aniBaslikArray = [String()]
@@ -25,12 +26,16 @@ class Anilarim: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchBar.delegate = self
 
         tableView.delegate = self
         tableView.dataSource = self
         
         getDataFromFirestore()
     }
+    
+   
     
     //DATABASE
     
@@ -111,5 +116,14 @@ class Anilarim: UIViewController, UITableViewDelegate, UITableViewDataSource{
         return hucre
     }
 }
+//SEARCH BAR DEVAM
 
-
+extension Anilarim : UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            getDataFromFirestore()
+        }else {
+            
+        }
+    }
+}
